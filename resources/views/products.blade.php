@@ -24,7 +24,7 @@
                 <div class="table-data">
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal"
-                        data-bs-target="#AddProductModal">
+                        data-bs-target="#addProductModal">
                         <span class="fa-solid fa-plus"></span>
                         Add Product
                     </button>
