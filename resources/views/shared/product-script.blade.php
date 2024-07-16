@@ -54,5 +54,15 @@
                 }
             });
         });
+
+        $(".update_product_form").click(function() {
+            let id = $(this).data('id');
+            let name = $(this).data('name');
+            let price = $(this).data('price');
+
+            $("#update_id").val(id);
+            $("#update_name").val(name);
+            $("#update_price").val(price);
+        });
     });
 </script>
