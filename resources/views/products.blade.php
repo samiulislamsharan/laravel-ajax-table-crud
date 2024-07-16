@@ -72,6 +72,8 @@
 
     @include('shared.add-product-modal')
 
+    @include('shared.update-product-modal')
+
     @include('shared.product-script')
 
 </body>
