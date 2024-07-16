@@ -36,7 +36,7 @@
                 dataType: "JSON",
                 success: function(response) {
                     if (response.status == 'success') {
-                        $("#AddProductModal").modal('hide');
+                        $("#addProductModal").modal('hide');
                         $("#addProductForm")[0].reset();
                         $("#productsTable").load(location.href + " #productsTable");
                     }
