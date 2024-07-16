@@ -45,7 +45,9 @@
                                     <td>{{ $product->name }}</td>
                                     <td>${{ $product->price }}</td>
                                     <td>
-                                        <button class="btn btn-primary me-2">
+                                        <button class="btn btn-primary me-2 update_product_form" data-bs-toggle="modal"
+                                            data-bs-target="#updateProductModal" data-id="{{ $product->id }}"
+                                            data-name="{{ $product->name }}" data-price="{{ $product->price }}">
                                             <span class="fa-regular fa-pen-to-square"></span>
                                             Edit
                                         </button>
