@@ -208,5 +208,32 @@
                 }
             });
         }
+
+        $(document).on("keyup", function(e) {
+            e.preventDefault();
+
+            let search_string = $("#search").val();
+
+            // console.log(search_string);
+
+            $.ajax({
+                type: "GET",
+                url: "{{ route('product.search') }}",
+                data: {
+                    search_string: search_string
+                },
+                success: function(response) {
+                    $(".table-data").html(response);
+
+                    if (response.status == "error") {
+                        $(".table-data").html(
+                            `<tr class="text-danger">
+                                <td colspan='4'>No data found.</td>
+                            </tr>`
+                        );
+                    }
+                }
+            });
+        })
     });
 </script>
