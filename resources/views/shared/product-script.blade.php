@@ -8,6 +8,8 @@
 
 <script src="https://kit.fontawesome.com/b9b86b707b.js" crossorigin="anonymous"></script>
 
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {
