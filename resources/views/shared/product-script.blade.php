@@ -35,10 +35,12 @@
                 },
                 dataType: "JSON",
                 success: function(response) {
-                    if (response.status == 'success') {
-                        $("#addProductModal").modal('hide');
-                        $("#addProductForm")[0].reset();
-                        $("#productsTable").load(location.href + " #productsTable");
+                    if (response.status == "success") {
+                        $("#addProductModal").modal("hide");
+                        $("#addProductForm")[0]
+                            .reset();
+                        $("#productsTable").load(
+                            location.href + " #productsTable");
                     }
                 },
                 error: function(error) {
