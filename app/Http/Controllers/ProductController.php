@@ -113,4 +113,25 @@ class ProductController extends Controller
 
         return view('paginate-products', compact('products'))->render();
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->search_string;
+
+        $products = Product::query()
+            ->where('name', 'like', '%' . $search . '%')
+            ->orWhere('price', 'like', '%' . $search . '%')
+            ->orWhere('id', 'like', '%' . $search . '%')
+            ->orderBy('id', 'DESC')
+            ->paginate(10);
+
+        if ($products->count() > 0) {
+            return view('paginate-products', compact('products'))->render();
+        } else {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'No products found',
+            ]);
+        }
+    }
 }
