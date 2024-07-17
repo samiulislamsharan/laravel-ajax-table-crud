@@ -79,6 +79,8 @@
 
     @include('shared.product-script')
 
+    {!! Toastr::message() !!}
+
 </body>
 
 </html>
