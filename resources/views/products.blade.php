@@ -18,7 +18,13 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <!-- Theme Toggle Icon -->
+                <button id="themeToggle" class="btn btn-lg theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
             <div class="col-md-8">
                 <div class="h1 my-3 text-center">Laravel Table AJAX CRUD</div>
 
