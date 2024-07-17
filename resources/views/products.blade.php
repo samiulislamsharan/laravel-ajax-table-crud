@@ -22,15 +22,15 @@
             <div class="col-md-8">
                 <div class="h1 my-3 text-center">Laravel Table AJAX CRUD</div>
 
-                <div class="table-data">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal"
-                        data-bs-target="#addProductModal">
-                        <span class="fa-solid fa-plus"></span>
-                        Add Product
-                    </button>
+                <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal"
+                    data-bs-target="#addProductModal">
+                    <span class="fa-solid fa-plus"></span>
+                    Add Product
+                </button>
 
-                    <table class="table table-striped table-dark" id="productsTable">
+                <div class="table-data">
+
+                    <table class="table table-striped" id="productsTable">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
