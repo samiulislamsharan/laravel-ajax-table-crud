@@ -28,6 +28,14 @@
                     Add Product
                 </button>
 
+                <div class="input-group input-group-lg mb-3">
+                    <span class="input-group-text" id="basic-addon1">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <input type="text" name="search" id="search" class="form-control"
+                        placeholder="Search here..." aria-label="Search here" aria-describedby="search-here-input">
+                </div>
+
                 <div class="table-data">
 
                     <table class="table table-striped" id="productsTable">
