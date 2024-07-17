@@ -52,6 +52,45 @@ class ProductController extends Controller
             ]);
         }
     }
+
+    public function update(Request $request)
+    {
+        $id = $request->update_id;
+
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'update_name' => 'required|unique:products,name,' . $id,
+                'update_price' => 'required|numeric|not_in:0',
+            ],
+            [
+                'update_name.required' => 'The product name is required',
+                'update_name.unique' => 'The product name must be unique, it already exists',
+
+                'update_price.required' => 'The product price is required',
+                'update_price.numeric' => 'The product price must be a number',
+                'update_price.not_in' => 'The product price must be greater than 0',
+            ]
+        );
+
+        if ($validator->passes()) {
+            Product::query()
+                ->where('id', $id)
+                ->update([
+                    'name' => $request->update_name,
+                    'price' => $request->update_price,
+                ]);
+
+            return response()->json([
+                'status' => 'success',
+            ]);
+        } else {
+            return response()->json([
+                'status' => 'error',
+                'message' => $validator->errors()->all(),
+            ]);
+        }
+    }
         return response()->json([
             'status' => 'success',
         ]);
