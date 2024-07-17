@@ -18,7 +18,7 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-        $("#btnAddProduct").click(function(e) {
+        $(document).on("click", "#btnAddProduct", function(e) {
             e.preventDefault();
 
             let name = $("#name").val();
