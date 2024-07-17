@@ -68,6 +68,47 @@
 
             $("#updateProductModal").modal("show");
         });
+
+        $(document).on("click", "#btnUpdateProduct", function(e) {
+            e.preventDefault();
+
+            let update_id = $("#update_id").val();
+            let update_name = $("#update_name").val();
+            let update_price = $("#update_price").val();
+
+            // console.log(id, name, price);
+
+            $.ajax({
+                type: "PUT",
+                url: "{{ route('product.update') }}",
+                data: {
+                    update_id: update_id,
+                    update_name: update_name,
+                    update_price: update_price
+                },
+                dataType: "JSON",
+                success: function(response) {
+                    if (response.status == 'success') {
+                        $("#updateProductModal").modal("hide");
+                        $("#updateProductForm")[0].reset();
+                        $("#productsTable")
+                            .load(location.href +
+                                " #productsTable");
+                    }
+                },
+                error: function(error) {
+                    // console.log(error);
+                    let err = error.responseJSON;
+                    if (err.errors) {
+                        $(".error-message").html("");
+                        $.each(err.errors, function(key, value) {
+                            $(".error-message").append("<p>" + value +
+                                "</p> <br>");
+                        });
+                    }
+                }
+            });
+        });
         });
     });
 </script>
