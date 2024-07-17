@@ -52,7 +52,8 @@
                                             <span class="fa-regular fa-pen-to-square"></span>
                                             Edit
                                         </button>
-                                        <button class="btn btn-danger">
+                                        <button id="btnDeleteProduct" class="btn btn-danger"
+                                            data-id="{{ $product->id }}">
                                             <span class="fa-regular fa-trash-can"></span>
                                             Delete
                                         </button>
