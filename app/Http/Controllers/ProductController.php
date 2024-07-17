@@ -91,6 +91,15 @@ class ProductController extends Controller
             ]);
         }
     }
+
+    public function destroy(Request $request)
+    {
+        $id = $request->id;
+
+        Product::query()
+            ->where('id', $id)
+            ->delete();
+
         return response()->json([
             'status' => 'success',
         ]);
