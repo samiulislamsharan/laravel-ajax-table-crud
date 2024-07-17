@@ -235,5 +235,38 @@
                 }
             });
         })
+
+        function updateTheme() {
+            if ($('body').attr('data-bs-theme') === 'dark') {
+                $('body').attr('data-bs-theme', 'light');
+                $('#themeToggle').html('<i class="fas fa-moon"></i>');
+                // .removeClass('border-white').addClass('border-dark');
+            } else {
+                $('body').attr('data-bs-theme', 'dark');
+                $('#themeToggle').html('<i class="fas fa-sun"></i>');
+                // .removeClass('border-dark').addClass('border-white');
+            }
+        }
+
+        // Detect system color scheme and set initial theme
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            $('body').attr('data-bs-theme', 'dark');
+            $('#themeToggle').html('<i class="fas fa-sun"></i>'); // Light theme icon for dark mode
+            // .removeClass('border-dark').addClass('border-white');
+        } else {
+            $('body').attr('data-bs-theme', 'light');
+            $('#themeToggle').html('<i class="fas fa-moon"></i>'); // Dark theme icon for light mode
+            // .removeClass('border-white').addClass('border-dark');
+        }
+
+        // Listen for system color scheme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            updateTheme();
+        });
+
+        // Toggle theme on button click
+        $(document).on('click', '#themeToggle', function() {
+            updateTheme();
+        });
     });
 </script>
