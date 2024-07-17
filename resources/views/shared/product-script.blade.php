@@ -57,6 +57,26 @@
                     }
                 }
             });
+
+            Command: toastr["success"]("Product added!")
+
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": true,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
         });
 
         $(document).on("click", "#btnUpdateProductForm", function() {
@@ -93,9 +113,27 @@
                     if (response.status == 'success') {
                         $("#updateProductModal").modal("hide");
                         $("#updateProductForm")[0].reset();
-                        $("#productsTable")
-                            .load(location.href +
-                                " #productsTable");
+                        $("#productsTable").load(location.href + " #productsTable");
+
+                        Command: toastr["success"]("Product updated!")
+
+                        toastr.options = {
+                            "closeButton": true,
+                            "debug": false,
+                            "newestOnTop": true,
+                            "progressBar": true,
+                            "positionClass": "toast-top-right",
+                            "preventDuplicates": false,
+                            "onclick": null,
+                            "showDuration": "300",
+                            "hideDuration": "1000",
+                            "timeOut": "5000",
+                            "extendedTimeOut": "1000",
+                            "showEasing": "swing",
+                            "hideEasing": "linear",
+                            "showMethod": "fadeIn",
+                            "hideMethod": "fadeOut"
+                        }
                     }
                 },
                 error: function(error) {
@@ -127,8 +165,27 @@
                     dataType: "JSON",
                     success: function(response) {
                         if (response.status == "success") {
-                            $("#productsTable").load(
-                                location.href + " #productsTable");
+                            $("#productsTable").load(location.href + " #productsTable");
+
+                            Command: toastr["success"]("Product deleted!")
+
+                            toastr.options = {
+                                "closeButton": true,
+                                "debug": false,
+                                "newestOnTop": true,
+                                "progressBar": true,
+                                "positionClass": "toast-top-right",
+                                "preventDuplicates": false,
+                                "onclick": null,
+                                "showDuration": "300",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            }
                         }
                     }
                 });
