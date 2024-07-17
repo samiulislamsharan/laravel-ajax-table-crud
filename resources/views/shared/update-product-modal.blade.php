@@ -2,6 +2,7 @@
 <div class="modal fade" id="updateProductModal" tabindex="-1" aria-labelledby="updateProductModalLabel" aria-hidden="true">
     <form action="" method="POST" id="updateProductForm">
         @csrf
+        @method('PUT')
         <input type="hidden" name="" id="update_id">
         <div class="modal-dialog">
             <div class="modal-content">
