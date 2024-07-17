@@ -109,6 +109,28 @@
                 }
             });
         });
+
+        $(document).on("click", "#btnDeleteProduct", function() {
+            let id = $(this).data("id");
+
+            // console.log(id);
+
+            if (confirm("Do you want to delete this product?")) {
+                $.ajax({
+                    type: "DELETE",
+                    url: "{{ route('product.delete') }}",
+                    data: {
+                        id: id
+                    },
+                    dataType: "JSON",
+                    success: function(response) {
+                        if (response.status == "success") {
+                            $("#productsTable").load(
+                                location.href + " #productsTable");
+                        }
+                    }
+                });
+            }
         });
     });
 </script>
