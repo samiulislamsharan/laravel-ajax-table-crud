@@ -104,4 +104,13 @@ class ProductController extends Controller
             'status' => 'success',
         ]);
     }
+
+    public function pagination()
+    {
+        $products = Product::query()
+            ->latest()
+            ->paginate(10);
+
+        return view('paginate-products', compact('products'))->render();
+    }
 }
