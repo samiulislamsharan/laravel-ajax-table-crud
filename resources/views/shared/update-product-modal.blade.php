@@ -4,15 +4,18 @@
         @csrf
         @method('PUT')
         <input type="hidden" name="" id="update_id">
-        <div class="modal-dialog">
+
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="updateProductModalLabel">
                         <i class="fa-solid fa-dice-d6"></i>
                         Update Product
                     </h1>
+
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body">
                     <div class="error-message text-danger">
                     </div>
@@ -31,6 +34,7 @@
                             <span class="input-group-text">
                                 <i class="fa-solid fa-dollar-sign"></i>
                             </span>
+
                             <input type="number" name="update_price" id="update_price" class="form-control"
                                 placeholder="Price" aria-label="Product Price"
                                 aria-describedby="update-product-price-input">
@@ -43,6 +47,7 @@
                         <span class="fa-solid fa-xmark"></span>
                         Close
                     </button>
+
                     <button type="button" class="btn btn-light" id="btnUpdateProduct">
                         <span class="fa-solid fa-plus"></span>
                         Update
